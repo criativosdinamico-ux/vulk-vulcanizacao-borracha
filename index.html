@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulk. Vulcanização • Comércio de Borracha</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for industrial icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            50: '#f4f6f8',
+                            100: '#e9ecef',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        vulk: {
+                            orange: '#f97316',
+                            darkorange: '#ea580c',
+                            yellow: '#eab308'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-orange-500 selection:text-white">
+
+    <header class="bg-industrial-900 text-slate-300 text-xs sm:text-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-12 flex flex-col sm:flex-row justify-between items-center py-2 sm:py-0">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center"><i class="fa-solid fa-clock text-orange-500 mr-2"></i> Atendimento 24h • Seg–Sex 8h às 17h</span>
+                <span class="hidden md:inline-flex items-center"><i class="fa-solid fa-shield-halved text-orange-500 mr-2"></i> CNPJ: 62.890.889/0001-87</span>
+            </div>
+            <div class="flex items-center space-x-6 mt-1 sm:mt-0">
+                <a href="tel:1156210714" class="hover:text-orange-400 transition"><i class="fa-solid fa-phone text-orange-500 mr-1.5"></i> (11) 5621-0714</a>
+                <a href="https://wa.me/5511953420777?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="hover:text-orange-400 transition flex items-center text-emerald-400 font-semibold">
+                    <i class="fa-brands fa-whatsapp mr-1 text-base"></i> (11) 95342-0777
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sticky top-0 z-40 bg-industrial-900/95 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="bg-orange-600 text-white p-2.5 rounded-xl font-black text-2xl tracking-tighter flex items-center justify-center shadow-lg shadow-orange-600/30">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-white">Vulk<span class="text-orange-500">.</span></span>
+                        <span class="block text-[10px] tracking-wider text-slate-400 uppercase font-bold">Vulcanização • Borracha</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#inicio" class="text-white hover:text-orange-400 transition">Início</a>
+                <a href="#sobre" class="text-slate-300 hover:text-orange-400 transition">Quem Somos</a>
+                <a href="#servicos" class="text-slate-300 hover:text-orange-400 transition">Serviços</a>
+                <a href="#diferenciais" class="text-slate-300 hover:text-orange-400 transition">Diferenciais</a>
+                <a href="#segmentos" class="text-slate-300 hover:text-orange-400 transition">Segmentos</a>
+                <a href="#contato" class="text-slate-300 hover:text-orange-400 transition">Contato</a>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#contato" class="bg-orange-600 hover:bg-orange-500 text-white font-semibold px-5 py-2.5 rounded-xl transition shadow-lg shadow-orange-600/30 text-sm flex items-center">
+                    <i class="fa-solid fa-file-invoice-dollar mr-2"></i> Orçamento Rápido
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-slate-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Modal/Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-industrial-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-slate-200 hover:text-orange-400 py-2 border-b border-slate-800">Início</a>
+            <a href="#sobre" class="block text-slate-200 hover:text-orange-400 py-2 border-b border-slate-800">Quem Somos</a>
+            <a href="#servicos" class="block text-slate-200 hover:text-orange-400 py-2 border-b border-slate-800">Serviços</a>
+            <a href="#diferenciais" class="block text-slate-200 hover:text-orange-400 py-2 border-b border-slate-800">Diferenciais</a>
+            <a href="#segmentos" class="block text-slate-200 hover:text-orange-400 py-2 border-b border-slate-800">Segmentos</a>
+            <a href="#contato" class="block text-slate-200 hover:text-orange-400 py-2">Contato</a>
+            <a href="https://wa.me/5511953420777" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-semibold text-center block mt-4">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-pattern text-white py-20 lg:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-industrial-900/95 via-industrial-900/80 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-orange-500/20 border border-orange-500/40 px-4 py-1.5 rounded-full text-orange-400 text-sm font-semibold mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-orange-500 animate-ping"></span>
+                    <span>Mais de 15 anos de experiência no mercado industrial</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+                    Vulcanização e Correias Transportadoras com <span class="text-orange-500">Atendimento 24 Horas</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed font-normal">
+                    Especialistas em serviços de vulcanização de alto desempenho e fornecimento de um mix completo de produtos em borracha. Agilidade, eficácia e foco total na sua produtividade.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5511953420777?text=Olá%2C%20preciso%20de%20atendimento%20para%20vulcanização." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl transition shadow-xl shadow-emerald-600/30 text-center flex items-center justify-center space-x-3 text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Atendimento 24h WhatsApp</span>
+                    </a>
+                    <a href="#servicos" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white font-bold px-8 py-4 rounded-xl transition text-center flex items-center justify-center space-x-2 text-lg">
+                        <i class="fa-solid fa-gears text-orange-500"></i>
+                        <span>Conhecer Serviços</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-16 pt-12 border-t border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-orange-500/10 p-3 rounded-xl text-orange-500">
+                            <i class="fa-solid fa-award text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-lg">15 Anos</div>
+                            <div class="text-xs text-slate-400">Tradição e Qualidade</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-orange-500/10 p-3 rounded-xl text-orange-500">
+                            <i class="fa-solid fa-bolt text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-lg">Plantão 24h</div>
+                            <div class="text-xs text-slate-400">Pronto atendimento</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 col-span-2 sm:col-span-1">
+                        <div class="bg-orange-500/10 p-3 rounded-xl text-orange-500">
+                            <i class="fa-solid fa-warehouse text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-lg">Amplo Estoque</div>
+                            <div class="text-xs text-slate-400">Pronta entrega</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-block bg-orange-100 text-orange-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Sobre a Vulk.
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-industrial-900 leading-tight">
+                        Soluções robustas em borracha e vulcanização para manter sua operação sem paradas.
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        A <strong>Vulk.</strong> possui amplo estoque de correias transportadoras com diversas especificações para proporcionar atendimento imediato às necessidades dos clientes. Somos especialistas em serviços de vulcanização, com foco em prestação rápida e eficaz, visando potencializar a produção e a rentabilidade do seu negócio.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Contamos com equipamentos de última geração e profissionais altamente qualificados para realização de serviços de vulcanização tanto à quente quanto à frio, atendendo plantas fabris, mineradoras, usinas e pedreiras com excelência comprovada.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="text-2xl font-bold text-orange-600 mb-1">100%</div>
+                            <div class="text-sm text-slate-600">Equipe especializada e certificada</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="text-2xl font-bold text-orange-600 mb-1">Ágil</div>
+                            <div class="text-sm text-slate-600">Atendimento in loco ou fábrica</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Equipe industrial Vulk" class="w-full h-[420px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-industrial-900/80 via-transparent to-transparent flex items-end p-8">
+                            <div class="text-white">
+                                <span class="bg-orange-600 text-xs px-2.5 py-1 rounded font-bold uppercase tracking-wider mb-2 inline-block">Qualidade Superior</span>
+                                <h3 class="text-xl font-bold">Excelência em cada emenda e revestimento</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-industrial-900 text-white p-6 rounded-2xl shadow-2xl border border-slate-800 hidden sm:block max-w-xs">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-orange-500 text-white p-3 rounded-xl text-xl">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold">15 Anos de Experiência</div>
+                                <div class="text-xs text-slate-400">Referência no setor de correias</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-orange-100 text-orange-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Nossos Serviços e Soluções
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-industrial-900 mt-4 mb-4">
+                    Serviços Especializados em Correias e Borracha
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Não vendemos apenas produtos ou serviços — somos referência no setor com soluções sob medida para sua operação industrial.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-industrial-900 mb-3">Emendas em Correias</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            As emendas consistem em unir as pontas de uma ou mais correias, com duas ou mais lonas através de técnicas apropriadas, pelo método de vulcanização a frio ou à quente.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-orange-600 font-semibold text-sm flex items-center group-hover:translate-x-1 transition duration-200">
+                        Solicitar Orçamento <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-industrial-900 mb-3">Reparos / Consertos</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Correções precisas e reforços estruturais para manter sua operação rodando com máxima segurança e eficiência, evitando prejuízos com paradas imprevistas.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-orange-600 font-semibold text-sm flex items-center group-hover:translate-x-1 transition duration-200">
+                        Solicitar Orçamento <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-rotate"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-industrial-900 mb-3">Recuperação de Correias</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Realizamos a recuperação de correias transportadoras (frio e quente). Aumento ou diminuição de tamanho, refinamento ou reconstituição de bordas. Realizado na empresa ou in loco.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-orange-600 font-semibold text-sm flex items-center group-hover:translate-x-1 transition duration-200">
+                        Solicitar Orçamento <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-industrial-900 mb-3">Inspeção em Transportadores</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Profissionais qualificados para feedback imediato. Detectamos falhas e apresentamos soluções rápidas, evitando paradas desnecessárias e otimizando todo o processo produtivo.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-orange-600 font-semibold text-sm flex items-center group-hover:translate-x-1 transition duration-200">
+                        Solicitar Orçamento <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-circle-notch"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-industrial-900 mb-3">Revestimentos em Cilindros</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Revestimento de tambores para materiais com tendência a aderir. Os emborrachamentos aumentam a durabilidade da correia e eliminam toda e qualquer patinação presente.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-orange-600 font-semibold text-sm flex items-center group-hover:translate-x-1 transition duration-200">
+                        Solicitar Orçamento <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-industrial-900 mb-3">Fornecimento & Revestimentos</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Revestimos calhas, silos, caixas e demais peças conforme avaliação e necessidade do cliente, fornecendo todo o material e mão de obra altamente qualificada.
+                        </p>
+                    </div>
+                    <a href="#contato" class="text-orange-600 font-semibold text-sm flex items-center group-hover:translate-x-1 transition duration-200">
+                        Solicitar Orçamento <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="py-20 bg-industrial-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-orange-500/20 text-orange-400 border border-orange-500/40 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Diferenciais Vulk.
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-4">
+                    Por que escolher a nossa empresa?
+                </h2>
+                <p class="text-slate-400 text-lg">
+                    Compromisso absoluto com a sua produtividade e entrega de alto padrão técnico.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-800/60 border border-slate-700/80 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="text-orange-500 text-3xl mb-4">
+                        <i class="fa-solid fa-stopwatch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Atendimento 24 Horas</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Equipamentos e profissionais prontos para atendimento ágil a qualquer momento, minimizando o tempo de máquina parada na sua planta.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/60 border border-slate-700/80 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="text-orange-500 text-3xl mb-4">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Amplo Estoque</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Diversas especificações de correias transportadoras e produtos em borracha em estoque para atendimento imediato e sem burocracia.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800/60 border border-slate-700/80 p-8 rounded-2xl backdrop-blur-sm">
+                    <div class="text-orange-500 text-3xl mb-4">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Qualidade Comprovada</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Parceria com os melhores fornecedores de matéria-prima do mercado e processos certificados para durabilidade máxima.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="segmentos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-orange-100 text-orange-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Atuação Industrial
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-industrial-900 mt-4 mb-4">
+                    Segmentos que Atendemos
+                </h2>
+                <p class="text-slate-600 text-lg">
+                    Nossa expertise atende os setores mais exigentes da economia com soluções robustas e seguras.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-mountain"></i></div>
+                    <h4 class="font-bold text-industrial-900">Mineração</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-road"></i></div>
+                    <h4 class="font-bold text-industrial-900">Usinas de Asfalto</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-hammer"></i></div>
+                    <h4 class="font-bold text-industrial-900">Pedreiras</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-building"></i></div>
+                    <h4 class="font-bold text-industrial-900">Concreteiras</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-industry"></i></div>
+                    <h4 class="font-bold text-industrial-900">Cimenteiras</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-scroll"></i></div>
+                    <h4 class="font-bold text-industrial-900">Papel e Celulose</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-wine-bottle"></i></div>
+                    <h4 class="font-bold text-industrial-900">Açúcar e Álcool</h4>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-center hover:border-orange-500 hover:shadow-lg transition">
+                    <div class="text-orange-600 text-3xl mb-3"><i class="fa-solid fa-cogs"></i></div>
+                    <h4 class="font-bold text-industrial-900">Indústrias Gerais</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="bg-orange-100 text-orange-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Fale Conosco
+                        </span>
+                        <h2 class="text-3xl font-extrabold text-industrial-900 mt-4 mb-4">
+                            Solicite seu Orçamento ou Atendimento 24h
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Nossa equipe técnica está pronta para atender sua demanda com rapidez e precisão. Entre em contato pelos canais abaixo ou preencha o formulário.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-600 text-white p-3.5 rounded-xl text-xl mt-1 shadow-lg shadow-orange-600/20">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-industrial-900 text-lg">Unidade São Paulo</h3>
+                                <p class="text-slate-600 text-sm">R. Tomé André, 47 – Jd. Miriam, São Paulo – SP</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-600 text-white p-3.5 rounded-xl text-xl mt-1 shadow-lg shadow-orange-600/20">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-industrial-900 text-lg">Unidade Salto de Pirapora</h3>
+                                <p class="text-slate-600 text-sm">Atendimento regional ágil para Salto de Pirapora e região</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-600 text-white p-3.5 rounded-xl text-xl mt-1 shadow-lg shadow-orange-600/20">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-industrial-900 text-lg">Telefones & WhatsApp</h3>
+                                <p class="text-slate-600 text-sm">Fixo: (11) 5621-0714</p>
+                                <p class="text-emerald-600 font-semibold text-sm">WhatsApp: (11) 95342-0777</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-600 text-white p-3.5 rounded-xl text-xl mt-1 shadow-lg shadow-orange-600/20">
+                                <i class="fa-solid fa-file-contract"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-industrial-900 text-lg">Dados da Empresa</h3>
+                                <p class="text-slate-600 text-sm">Vulk. Vulcanização • Comércio de Borracha</p>
+                                <p class="text-slate-600 text-sm">CNPJ: 62.890.889/0001-87</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200">
+                        <h3 class="text-2xl font-bold text-industrial-900 mb-6">Peça um Orçamento</h3>
+                        
+                        <!-- Form -->
+                        <form id="quote-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">Nome Completo / Empresa *</label>
+                                    <input type="text" id="form-name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 text-slate-800" placeholder="Seu nome ou nome da empresa">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">Telefone / WhatsApp *</label>
+                                    <input type="text" id="form-phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 text-slate-800" placeholder="(11) 99999-9999">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">E-mail *</label>
+                                    <input type="email" id="form-email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 text-slate-800" placeholder="seu@email.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">Serviço de Interesse</label>
+                                    <select id="form-service" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 text-slate-800 bg-white">
+                                        <option value="Emendas em Correias">Emendas em Correias (Quente / Frio)</option>
+                                        <option value="Reparos / Consertos">Reparos / Consertos</option>
+                                        <option value="Recuperação de Correias">Recuperação de Correias</option>
+                                        <option value="Inspeção em Transportadores">Inspeção em Transportadores</option>
+                                        <option value="Revestimentos em Cilindros">Revestimentos em Cilindros</option>
+                                        <option value="Fornecimento de Produtos">Fornecimento de Produtos / Calhas e Silos</option>
+                                        <option value="Outros Serviços">Outros Serviços / Atendimento 24h</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Mensagem / Detalhes da Necessidade *</label>
+                                <textarea id="form-message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 text-slate-800" placeholder="Descreva os detalhes dos serviços ou correias necessárias..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition shadow-xl shadow-orange-600/30 text-lg flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Solicitação de Orçamento</span>
+                            </button>
+                        </form>
+
+                        <!-- Success Custom Modal/Box -->
+                        <div id="success-message" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-center">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-lg">Solicitação Enviada com Sucesso!</h4>
+                            <p class="text-sm mt-1">Nossa equipe entrará em contato rapidamente ou clique direto no botão do WhatsApp para atendimento imediato.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/5511953420777?text=Olá%2C%20vim%20pelo%20site%20e%20preciso%20de%20atendimento." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition duration-300 animate-pulse-slow text-3xl" title="Fale pelo WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+<!-- GALERIA DE TRABALHOS REALIZADOS -->
+<section id="galeria" class="py-20 bg-industrial-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="bg-orange-500/20 text-orange-400 border border-orange-500/40 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Trabalhos Realizados</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-4">Galeria de Serviços Executados</h2>
+            <p class="text-slate-300 text-lg">Fotos reais dos nossos trabalhos — você adicionará mais conforme novos projetos forem concluídos.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="assets/img/trabalho-1.jpg" target="_blank" class="group block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition border border-slate-700">
+                <img src="assets/img/trabalho-1.jpg" alt="Emenda de correia transportadora - trabalho realizado Vulk" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-industrial-800 p-4">
+                    <h4 class="font-bold text-white">Emenda em Correia Transportadora</h4>
+                    <p class="text-xs text-slate-400">Correia emenda a frio • Trabalho realizado</p>
+                </div>
+            </a>
+            <a href="assets/img/trabalho-2.jpg" target="_blank" class="group block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition border border-slate-700">
+                <img src="assets/img/trabalho-2.jpg" alt="Rolo de borracha vulcanizada - trabalho realizado Vulk" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                <div class="bg-industrial-800 p-4">
+                    <h4 class="font-bold text-white">Rolo de Borracha Vulcanizada</h4>
+                    <p class="text-xs text-slate-400">Material em processo • Trabalho realizado</p>
+                </div>
+            </a>
+            <div class="bg-slate-800/60 border-2 border-dashed border-slate-600 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:border-orange-500/60 transition">
+                <div class="text-5xl mb-4">📷</div>
+                <h4 class="font-bold text-white">Próximo Trabalho</h4>
+                <p class="text-sm text-slate-400 mt-2">Você adicionará mais fotos de serviços realizados aqui.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-industrial-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 pb-8 border-b border-slate-800">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="bg-orange-600 text-white p-2 rounded-xl text-xl">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black text-white">Vulk<span class="text-orange-500">.</span></span>
+                        <span class="block text-[10px] tracking-wider text-slate-400 uppercase font-bold">Vulcanização • Comércio de Borracha</span>
+                    </div>
+                </div>
+                <div class="text-sm text-slate-400 text-center md:text-right">
+                    <p>CNPJ: 62.890.889/0001-87</p>
+                    <p class="mt-1">Atendimento 24 Horas • São Paulo e Salto de Pirapora</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 Vulk. Vulcanização e Comércio de Borracha. Todos os direitos reservados.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#inicio" class="hover:text-orange-400 transition">Início</a>
+                    <a href="#sobre" class="hover:text-orange-400 transition">Sobre</a>
+                    <a href="#servicos" class="hover:text-orange-400 transition">Serviços</a>
+                    <a href="#contato" class="hover:text-orange-400 transition">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Handle quote form submission without alert()
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const service = document.getElementById('form-service').value;
+            const message = document.getElementById('form-message').value;
+
+            // Show success message box
+            const successBox = document.getElementById('success-message');
+            successBox.classList.remove('hidden');
+
+            // Reset form
+            document.getElementById('quote-form').reset();
+
+            // Scroll to success message
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Automatically open WhatsApp with pre-filled message after 1.5 seconds for instant conversion
+            setTimeout(() => {
+                const whatsappUrl = `https://wa.me/5511953420777?text=${encodeURIComponent(`Olá, meu nome é ${name}, telefone ${phone}. Tenho interesse em ${service}. Detalhes: ${message}`)}`;
+                window.open(whatsappUrl, '_blank');
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
