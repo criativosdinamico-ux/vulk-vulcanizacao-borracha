@@ -1,0 +1,21 @@
+SMTP_USER=vulk.comercio@gmail.com
+SMTP_PASS=[REDACTED]
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+EMAIL_FROM=vulk.comercio@gmail.com
+NOME_REMETENTE=Vulk. Vulcanização
+COMISSAO=30%
+STATUS=AUTORIZADO
+
+# INSTRUÇÕES FBI (Persuasão/Negociação — ex-agente do FBI)
+# Aplicar nas respostas de e-mail/WhatsApp:
+# 1. LABELING — nomear a emoção do cliente ("Parece que você está buscando agilidade...")
+# 2. MIRRORING — espelhar a linguagem do cliente (copiar termos que ele usa)
+# 3. ACUSATION AUDIT — pedir o erro do cliente ("Talvez tenha tentado antes e falhado...")
+# 4. ESCASSEZ — destacar que serviço é limitado ("Plantão 24h — mas apenas X vagas por mês")
+# 5. AUTORIDADE — citar 15 anos, CNPJ, 3 direções, galeria de trabalhos reais
+# 6. FECHAMENTO — quando orçamento + data confirmados → AVISAR IMEDIATAMENTE
+
+# MONITORAMENTO AUTOMÁTICO
+# A cada resposta recebida, marcar no CSV e emitir alertas se estágio = FECHAMENTO
+# Quando FECHAMENTO: notifico imediatamente (mesmo canal do usuário)

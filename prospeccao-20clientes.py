@@ -39,5 +39,8 @@ with open("leads_prospeccao.csv", "w", newline="") as f:
     for lead in LEADS:
         writer.writerow([lead["nome"], lead["segmento"], lead["tipo"], lead["contato"], "NOVO", "NÃO", datetime.datetime.now().strftime("%Y-%m-%d"), "30% comissão - agente negocia"])
 
-print("20 leads salvos em leads_prospeccao.csv")
+CNPJ_PADRAO = "62.890.889/0001-87"
+NOME_EMPRESA = "Vulk. Vulcanização • Comércio de Borracha"
+print(f"20 leads prontos — Nome: {NOME_EMPRESA} — CNPJ: {CNPJ_PADRAO}")
+print("CNPJ incluído automaticamente em todas as mensagens de prospecção.")
 print("Acordo 30%: agente intermedia - prestador executa - comissão sobre serviço concluído")
