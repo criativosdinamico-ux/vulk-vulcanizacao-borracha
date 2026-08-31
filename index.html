@@ -691,5 +691,38 @@
             }, 1500);
         }
     </script>
+
+<script id="vulk-analytics">
+(function(){
+  'use strict';
+  const session = Math.random().toString(36).slice(2);
+  const start = Date.now();
+  const url = window.location.href;
+  const log = (tipo, info={}) => { console.log('[VULK-TRACK]', tipo, info); };
+  
+  // 1. Acesso ao site
+  log('acesso', {session, url, ts: new Date().toISOString()});
+  
+  // 2. Cliques nos botões principais (WhatsApp, Orçamento, Galeria)
+  ['WhatsApp','Orçamento','Conhecer','Galeria','Contato'].forEach(label => {
+    document.querySelectorAll('a, button').forEach(el => {
+      if(el.innerText && el.innerText.includes(label)) {
+        el.addEventListener('click', () => log('click', {session, url, label, ts: Date.now()-start}));
+      }
+    });
+  });
+  
+  // 3. Conversão (formulário enviado)
+  document.querySelectorAll('form').forEach(f => f.addEventListener('submit', (e) => {
+    log('conversao', {session, url, ts: new Date().toISOString(), form_id: f.id || 'formulario-contato'});
+  }));
+  
+  // 4. Abandono (saída antes de 30s ou scroll <10%)
+  window.addEventListener('beforeunload', () => {
+    log('abandono', {session, url, tempo_segundos: Math.round((Date.now()-start)/1000)});
+  });
+})();
+</script>
+
 </body>
 </html>

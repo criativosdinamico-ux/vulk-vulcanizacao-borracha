@@ -1,0 +1,44 @@
+{
+  "tipo": "analytics_cliente_vulk",
+  "data_inicio": "2026-08-31",
+  "site": "https://criativosdinamico-ux.github.io/vulk-vulcanizacao-borracha/",
+  "nome_empresa": "Vulk. Vulcanização",
+  "cnpj": "62.890.889/0001-87",
+  "email_autorizado": "vulk.comercio@gmail.com",
+  "email_senha_app": "vxsl nmlu wtjl xxrl",
+  "nome_exibicao": "Vulk. Vulcanização",
+  "comissao_acordo": "30%",
+  "leads_ativos": 20,
+  "leads_email_enviado": 7,
+  "leads_email_pendente": 13,
+  "cron_prospeccao": "52f3eab33b96 (every 1h)",
+  "cron_evolucao_4": "68cda75c2ac3 (every 1h)",
+  "fotos_galeria": [
+    "trabalho-1.jpg",
+    "trabalho-2.jpg",
+    "trabalho-3.jpg",
+    "trabalho-4.jpg"
+  ],
+  "instrucoes_fbi": [
+    "Labeling",
+    "Mirroring",
+    "Acusation Audit",
+    "Escassez",
+    "Autoridade"
+  ],
+  "tecnicas_persuasao_aplicadas": true,
+  "autonomia_total_ativa": true,
+  "confirmacoes_solicitadas": 0,
+  "status_analytics": "IMPLEMENTADO",
+  "rastreamento": [
+    "acesso",
+    "click_WhatsApp",
+    "click_Orcamento",
+    "click_Galeria",
+    "click_Contato",
+    "formulario_conversao",
+    "abandono_pagina"
+  ],
+  "monitoramento_fechamento": "AVISO IMEDIATO quando orçamento + data confirmados",
+  "proximo_passo": "Responder leads que retornarem e passar orçamento + data ao prestador"
+}
