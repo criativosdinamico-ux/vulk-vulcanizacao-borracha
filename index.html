@@ -695,20 +695,7 @@
     </script>
 
 <script id="vulk-analytics">
-(function(){
-  const session=Math.random().toString(36).slice(2);
-  const url=window.location.href;
-  const endpoint="https://hermes.agent.local/track"; // webhook do servidor
-  // Enviar acesso
-  fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session,url,tipo:"acesso",ts:new Date().toISOString()})}).catch(()=>{});
-  document.querySelectorAll('a[href*="wa.me"],a[href*="#"],button').forEach(el=>{
-    el.addEventListener('click',()=>{
-      fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session,url,tipo:"click",label:el.innerText.trim()||"botao",ts:new Date().toISOString()})}).catch(()=>{});
-    });
-  });
-  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',()=>{fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session,url,tipo:"conversao",ts:new Date().toISOString()})}).catch(()=>{});}));
-})();
-</script>
+
 (function(){
   'use strict';
   const session = Math.random().toString(36).slice(2);
