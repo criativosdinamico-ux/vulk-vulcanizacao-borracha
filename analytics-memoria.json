@@ -1,1 +1,64 @@
-{"bloco":"flaviojorrge@gmail.com","status":"BLOQUEADO-NAO-ENVIAR","duplicacao":"corrigida","cron":"pausado","autonomia":"total","confirmacoes":"0","acao":"nenhum_envio_ate_autorizacao","data":"2026-08-31"}
+{
+  "bloco": "flaviojorrge@gmail.com",
+  "status": "BLOQUEADO-NAO-ENVIAR",
+  "duplicacao": "corrigida",
+  "cron": "pausado",
+  "autonomia": "total",
+  "confirmacoes": "0",
+  "acao": "nenhum_envio_ate_autorizacao",
+  "data": "2026-08-31",
+  "repos_referencia": [
+    {
+      "nome": "huashu-design",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "arquivos": 189
+    },
+    {
+      "nome": "huashu-skills",
+      "url": "https://github.com/alchaincyf/huashu-skills",
+      "arquivos": 25
+    },
+    {
+      "nome": "obsidian-ai-orange-book",
+      "url": "https://github.com/alchaincyf/obsidian-ai-orange-book",
+      "arquivos": 6
+    },
+    {
+      "nome": "skills-guide",
+      "url": "https://github.com/alchaincyf/skills-guide",
+      "arquivos": 2
+    },
+    {
+      "nome": "huasheng_editor",
+      "url": "https://github.com/alchaincyf/huasheng_editor",
+      "arquivos": 20
+    },
+    {
+      "nome": "impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "arquivos": 3542
+    },
+    {
+      "nome": "fable-method",
+      "url": "https://github.com/Sahir619/fable-method",
+      "clonado": true
+    }
+  ],
+  "skills_referencia": [
+    {
+      "nome": "huashu-design",
+      "fonte": "alchaincyf",
+      "arquivos": 189
+    },
+    {
+      "nome": "impeccable",
+      "fonte": "pbakaus",
+      "arquivos": 3542
+    },
+    {
+      "nome": "fable-method",
+      "fonte": "Sahir619",
+      "clonado": true
+    }
+  ]
+}
